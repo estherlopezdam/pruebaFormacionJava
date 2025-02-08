@@ -1,0 +1,70 @@
+Ejercicio 1
+
+Realizar el método/función
+valoresEstadisticos(File f): int
+que lea desde un fichero un conjunto de números y devuelva
+una serie de valores:
+• Máximo valor
+• Mínimo valor
+• Media aritmética
+• Número de veces que aparece el número mayor
+Ejemplo: si el fichero tuviera los números 3, 8, 9, 2, 10,
+8, 5, 10, 2, 3 el método mostraría en pantalla:
+MAX: 10, MIN: 2, MEDIA: 6, Nº VECES MAX: 2
+Para realizarlo puedes tomar las siguientes consideraciones:
+1) La función para leer de fichero ya existe y NO tienes que
+desarrollarla. Devuelve directamente un array en el cual
+cada “celda” representa un número.
+int[] numeros = LeeNumerosFichero(File f);
+2) Si el lenguaje empleado dispone de alguna función de
+tipo MAX, MIN,… no la utilices. Lo que se busca es saber
+cómo desarrollas el algoritmo, no el uso de una librería
+de funciones.
+
+
+********************************************************************
+
+Ejercicio 2
+
+Un palíndromo es una palabra que se puede leer igual de
+izquierda a derecha o de derecha a izquierda (Ejemplo RADAR)
+Realizar el siguiente método/función
+comprobarPalindromo(): void
+En el algoritmo se leerá la palabra desde un fichero.
+Comprobar si esa palabra es un palíndromo e indicar, por
+texto, si es o no es palíndromo y el número de letras.
+Para realizarlo puedes tomar las siguientes consideraciones
+1) La función para leer de fichero ya existe y NO tienes que
+desarrollarla. Devuelve directamente un array en el cual
+cada “celda” representa una de las letras de la palabra.
+char[] palabra = LeePalabraFichero(File f);
+
+
+********************************************************************
+Ejercicio 3
+
+Realizar el siguiente método/función
+traducirPalabra(String pal, int idiom): void
+tal que dada una palabra y un número que identifique un
+idioma (1:alemán // 2:búlgaro) traduzca la palabra al idioma.
+Según el idioma y lo que valga la última letra, los cambios serán
+▪ Alemán
+• (vocal). Quitar vocal y añadir sufijo “ujem”
+▪ Ej: silla → sillujem
+• (consonante). Quita 2 letras y añade sufijo “ujem”:
+▪ Ej: camión → camiujem
+▪ Búlgaro
+• (vocal). Añadir sufijo “kov”:
+▪ Ej: silla → sillakov
+• (consonante). Quitar 1 letra y añadir sufijo “kov”:
+▪ Ej: camión → camiokov
+NOTA: supondremos las siguientes funciones ya creadas.
+1) Funcion 1 (subString): dada una cadena, la posición
+inicial y un número de letras, devuelve una subcadena
+subString(text, inicio, numLetras): String
+Ej01. darSubString(“Lucatic”,2,3) → uca
+Ej02. darSubString(“Lucatic”,2,5) → ucati
+2) Funcion 2 (isVocal): dada una letra indica si es vocal.
+Considera que ya existe este método, pero si sabes
+programarlo, desarróllalo (pero no el anterior)
+isVocal(char letra): boolean
