@@ -1,9 +1,9 @@
 target/
-*.class
+target/*.class
 
 .idea/
 *.iml
 *.ipr
-*.iwsç
+*.iws
 
 .mvn/
