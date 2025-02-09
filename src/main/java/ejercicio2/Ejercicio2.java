@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ejercicio2 {
+public class Ejercicio2 {
     public static void main(String[] args) {
         File file = new File("datosPalindromo.txt");
         System.out.println("Buscando archivo en: " + file.getAbsolutePath());

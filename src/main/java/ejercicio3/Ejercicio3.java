@@ -1,12 +1,9 @@
 package ejercicio3;
 
-import jdk.jshell.SourceCodeAnalysis;
 
-import java.io.File;
-import java.util.Locale;
 import java.util.Scanner;
 
-public class ejercicio3 {
+public class Ejercicio3 {
     public static void main(String[] args) {
         boolean validate = false;
         int idioma = 0;

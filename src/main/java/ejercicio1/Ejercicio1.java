@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ejercicio1 {
+public class Ejercicio1 {
     public static void main(String[] args) {
         File file = new File("datos.txt");
         System.out.println("Buscando archivo en: " + file.getAbsolutePath());
