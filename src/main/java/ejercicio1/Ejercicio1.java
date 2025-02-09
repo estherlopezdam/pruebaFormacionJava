@@ -11,12 +11,12 @@ public class Ejercicio1 {
         File file = new File("datos.txt");
         System.out.println("Buscando archivo en: " + file.getAbsolutePath());
         int[] estadisticas = valoresEstadisticas(file);
-        if(estadisticas!=null){
+        if (estadisticas!=null) {
             System.out.println("Numeros encontrados");
             System.out.println("MAX:"+estadisticas[0] + " MIN:" +estadisticas[1] + " MEDIA:" +estadisticas[2] + " Nº VECES MAX:" +estadisticas[3]);
         }
     }
-    public static int [] valoresEstadisticas(File file){
+    public static int[] valoresEstadisticas(File file){
         //int contador = 0;
         int suma = 0;
         int max = 0, min = 999999999;
@@ -30,15 +30,15 @@ public class Ejercicio1 {
             System.out.println("Error: No se encontraron números en el archivo.");
             return null;
         }
-        for(int i = 0; i < numeros.length; i++){
+        for (int i = 0; i < numeros.length; i++) {
            if (max < numeros[i]) { //si el numero es mayor que el max lo guardamos como nuevo max
                max = numeros[i];
                repetidoMaxNum = 1; // inicializo el primer numero max
 
-            } else if(max == numeros[i]) {
+            } else if (max == numeros[i]) {
                repetidoMaxNum++; // si son iguales sumo uno al repetido
            }
-           if(min > numeros[i]){ //si el numero es mas pequeño que el min lo guardamos como nuevo min
+           if (min > numeros[i]) { //si el numero es mas pequeño que el min lo guardamos como nuevo min
                min = numeros[i];
            }
            suma += numeros[i]; //sumo todos los numeros para hacer la media
@@ -55,11 +55,11 @@ public class Ejercicio1 {
     }
 
     //Metodo para leer los numeros desde el archivo
-    public static int [] leerNumerosDesdeArchivo(File file) {
+    public static int[] leerNumerosDesdeArchivo(File file) {
         List<Integer> listaNumeros = new ArrayList<>();
 
-        try {
-            Scanner scanner = new Scanner(file); //Aqui abrimos el archivo
+        try(Scanner scanner = new Scanner(file)) {
+             //Aqui abrimos el archivo
             while (scanner.hasNextLine()) { //aqui hacemos un bucle para que lea el archivo linea por linea, si no hay mas lineas que leer sale del bucle
                 String linea = scanner.nextLine();//leemos una linea completa
                 String[] partes = linea.split(",");//Esto divide la linea que ha leido en bloques que esten separados por comas
@@ -67,7 +67,7 @@ public class Ejercicio1 {
                     listaNumeros.add(Integer.parseInt(num.trim())); //Convierto a int los numeros del String[] y los añado a la lista
                 }
             }
-            scanner.close(); //cierro el lector del archivo
+
         } catch (FileNotFoundException e) {
             System.out.println("Error; archivo no encontrado");
             return null;
@@ -76,9 +76,8 @@ public class Ejercicio1 {
             return null;
         }
         //convierto y devuelvo la lista en int []
-        int [] resultado = listaNumeros.stream().mapToInt(i -> i).toArray();
-        System.out.println(resultado);
-        return resultado;
+
+        return listaNumeros.stream().mapToInt(i -> i).toArray();
 
     }
 }

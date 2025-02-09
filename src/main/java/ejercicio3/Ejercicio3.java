@@ -28,20 +28,20 @@ public class Ejercicio3 {
                 case 2 -> 2;
                 default -> idioma;
             };
-            if(idioma != 0){
+            if (idioma != 0){
                 validate = true;
             }
 
         }
 
         if (isVocal(ultimaLetra)) {
-            if(idioma == 1) {
+            if (idioma == 1) {
                 nuevaPalabra = subString(palabra,0 ,palabra.length() - 1);
                 nuevaPalabra += "ujem";
             } else nuevaPalabra = palabra + "kov";
 
         } else {
-            if(idioma == 2) {
+            if (idioma == 2) {
                 nuevaPalabra = subString(palabra,0 ,palabra.length() - 1);
                 nuevaPalabra += "kov";
             } else {

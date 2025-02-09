@@ -10,17 +10,16 @@ public class Ejercicio2 {
     public static void main(String[] args) {
         File file = new File("datosPalindromo.txt");
         System.out.println("Buscando archivo en: " + file.getAbsolutePath());
-        if(leerPalabra(file).isEmpty()) {
+        if (leerPalabra(file).isEmpty()) {
             System.out.println("No se encontro archivo o esta vacio");
         } else {
             String palabra = leerPalabra(file);
-            if((comprobarPalindromo(palabra)) != "0"){
+            if (!comprobarPalindromo(palabra).equals("0")) {
                 System.out.println("La palabra es un palindromo y tiene "  + comprobarPalindromo(palabra) + " letras");
             } else System.out.println("La palabra no es un Palindromo");
-
         }
-
     }
+
 //aunque se podria hacer con stringbuilder y un reverse entiendo que como en el ejer anterior no quereis que usemos esas clases
     public static String comprobarPalindromo (String palabra) {
         int numeroLetras = palabra.length();
@@ -31,7 +30,7 @@ public class Ejercicio2 {
                 break;
             }
         }
-        if(mach) {
+        if (mach) {
             return String.valueOf(numeroLetras);
         } else return "0";
     }
